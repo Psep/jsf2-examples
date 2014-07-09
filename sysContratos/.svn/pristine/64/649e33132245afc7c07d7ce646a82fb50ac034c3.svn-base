@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Página 2 de prueba</title>
+</h:head>
+<body>
+	<h1>Hola desde JSF en la página dos</h1>
+	<h:form>
+		<div style="width: 100%;">
+			<div style="width: 50%; text-align: center; margin-left: auto; margin-right: auto;">
+				<p:panel id="formularioInscripcion"
+					header="Formulario de Inscripción">
+					<p>
+						<p:inputText id="username" value="#{loginBean.username}" />
+						<p:watermark for="username" value="Username" />
+						<br />
+						<p:password id="password" value="#{loginBean.password}" />
+						<p:watermark for="password" value="Password" />
+						<br />
+						<p:commandButton action="#{loginBean.validaLoginAction}"
+							value="Ingresar" update="message" />
+					</p>
+					<p>
+						<p:messages id="message" showDetail="true" autoUpdate="true" closable="true" />
+					</p>
+				</p:panel>
+			</div>
+		</div>
+	</h:form>
+</body>
+</html>
